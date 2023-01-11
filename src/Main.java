@@ -5,8 +5,26 @@
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-        System.out.println("============================");
+        OwnList <Integer> ownList = new OwnList<>();
+
+        // + add
+        for (int i = 0; i < 20; i++) {
+            ownList.add(i*2);
+            System.out.print(ownList.get(i) + " ");
+        }
+        System.out.println("\n--------------------------");
+
+        // + size
+        System.out.println(ownList.size() + " - длина");
+
+        // + get
+        System.out.println(ownList.get(4) + " - эдемент под индексом");
+
+        // delete
+        ownList.delete(4);
+        for (int i = 0; i < ownList.size(); i++) {
+            System.out.print(ownList.get(i) + " ");
+        }
     }
 }
 
