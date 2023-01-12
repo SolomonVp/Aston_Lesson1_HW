@@ -1,7 +1,7 @@
 public class OwnList<T>{
-    private final int capacity = 10;
+    private final int CAPACITY = 10;
     private int count = 0;
-    Object[] ownList = new Object[capacity];
+    Object[] ownList = new Object[CAPACITY];
 
     public void add(T value) {
         if (ownList.length == count) {
@@ -28,13 +28,14 @@ public class OwnList<T>{
         for (int i = index; i < count; i++) {
             ownList[i] = ownList[i + 1];
         }
+        count--;
     }
 
     public void set(int index, int value) {
         ownList[index] = value;
     }
 
-    public void addAll(OwnList<T> ownList, OwnList<T> ownList2) {
+    public OwnList<T> addAll(OwnList<T> ownList, OwnList<T> ownList2) {
         Object[] o = new Object[ownList.size() + ownList2.size()];
         System.out.println(o.length);
 
@@ -47,17 +48,13 @@ public class OwnList<T>{
             o[num] = ownList2.get(j);
             num++;
         }
-        System.out.println("num = " + num);
-        System.out.println(o.length);
-        for (int l = 0; l < num; l++) {
-            System.out.print(o[l] + " | ");
-        }
         for (int i = 0; i < o.length; i++) {
             if (o[i] == null) {
                 continue;
             }
             ownList.set(i, (int)o[i]);
         }
+        return ownList;
     }
 }
 
