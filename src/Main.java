@@ -12,8 +12,8 @@ public class Main {
         OwnList<Integer> ownList = new OwnList<>();
 
         // + add -------------------------------------------------------------------------------------------------------
-        for (int i = 0; i < 22; i++) {
-            ownList.add(i * 2);
+        for (int i = 0; i < 16; i++) {
+            ownList.add(i);
             System.out.print(ownList.get(i) + " ");
         }
 
@@ -31,45 +31,32 @@ public class Main {
         System.out.println("\n" + ownList.size() + " - длина");
         System.out.println(ownList.get(4) + " - эдемент под индексом");
 
-        // sort --------------------------------------------------------------------------------------------------------
-
-        // ownList.bubbleSort(); ---------------------------------------------------------------------------------------
-
+        // + addAll ------------------------------------------------------------------------------------------------------
         OwnList<Integer> ownList2 = new OwnList<>();
-        ownList2.add(34);
-        ownList2.add(45);
+        ownList2.add(10001);
+        ownList2.add(10002);
 
-//        ownList.addAll(ownList2);
 
+        ownList.addAll(ownList, ownList2);
         for (int i = 0; i < ownList.size(); i++) {
-            System.out.print(ownList.get(i) + " ");
+            System.out.println(ownList.get(i) + " Ихаааа");
         }
-        System.out.println("\n" + ownList.size() + " - длина");
 
-//        ArrayList <Integer> list1 = new ArrayList<>();
-//        list1.add(1);
-//        list1.add(2);
-//        list1.add(5);
-//        ArrayList <Integer> list2 = new ArrayList<>();
-//        list2.add(0);
-//        list2.add(7);
-//        list2.add(4);
-//        list1.addAll(list2);
-//        System.out.println(list1);
+        // bubbleSort ------------------------------------------------------------------------------------------------
 
-        // + bubbleSort ------------------------------------------------------------------------------------------------
-        boolean isSorted = false;
-        while (!isSorted) {
-            isSorted = true;
-            for (int i = 1; i < ownList.size(); i++) {
-                if (ownList.get(i) < ownList.get(i - 1)) {
-                    int s = ownList.get(i);
-                    ownList.set(ownList.get(i), ownList.get(i - 1));
-                    ownList.set(ownList.get(i - 1), s);
-                    isSorted = false;
-                }
-            }
-        }
+//        boolean isSorted = false;
+//        while (!isSorted) {
+//            isSorted = true;
+//            for (int i = 1; i < ownList.size(); i++) {
+//                if (ownList.get(i) < ownList.get(i - 1)) {
+//                    int s = ownList.get(i);
+//                    ownList.set(ownList.get(i), ownList.get(i - 1));
+//                    ownList.set(ownList.get(i - 1), s);
+//                    isSorted = false;
+//                }
+//            }
+//        }
+
     }
 }
 
