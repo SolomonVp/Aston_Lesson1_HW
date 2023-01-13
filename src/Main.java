@@ -9,51 +9,50 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        OwnList<Integer> ownList = new OwnList<>();
+        OwnList<Integer> list = new OwnList<>();
 
         // + add -------------------------------------------------------------------------------------------------------
         for (int i = 0; i < 16; i++) {
-            ownList.add(i);
+            list.add(i);
+            System.out.println(list.get(i));
         }
+
 
         // + size ------------------------------------------------------------------------------------------------------
-        System.out.println("\n" + ownList.size() + " - длина");
+//        System.out.println("\n" + list.size() + " - длина");
 
         // + get -------------------------------------------------------------------------------------------------------
-        System.out.println(ownList.get(4) + " - элемент под индексом");
+//        System.out.println(list.get(4) + " - элемент под индексом");
 
         // + delete ----------------------------------------------------------------------------------------------------
-        ownList.delete(4);
-        for (int i = 0; i < ownList.size(); i++) {
-            System.out.print(ownList.get(i) + " ");
-        }
+//        list.delete(4);
+//        for (int i = 0; i < list.size(); i++) {
+//            System.out.print(list.get(i) + " ");
+//        }
 
         // + addAll ----------------------------------------------------------------------------------------------------
-        OwnList<Integer> ownList2 = new OwnList<>();
-        ownList2.add(10001);
-        ownList2.add(10002);
-
-
-        ownList.addAll(ownList, ownList2);
-        for (int i = 0; i < ownList.size(); i++) {
-            System.out.println(ownList.get(i) + " Ихаааа");
-        }
+//        OwnList<Integer> ownList2 = new OwnList<>();
+//        ownList2.add(10001);
+//        ownList2.add(10002);
+//
+//        list.addAll(list, ownList2);
+//        for (int i = 0; i < list.size(); i++) {
+//            System.out.println(list.get(i) + "------------------------");
+//        }
 
         // bubbleSort --------------------------------------------------------------------------------------------------
-        boolean isSorted = false;
-        while (!isSorted) {
-            isSorted = true;
-            for (int i = 1; i < ownList.size(); i++) {
-                if (ownList.get(i) < ownList.get(i - 1)) {
-                    int s = ownList.get(i);
-                    ownList.set(ownList.get(i), ownList.get(i - 1));
-                    ownList.set(ownList.get(i - 1), s);
-                    isSorted = false;
-                }
-            }
-        }
-
-
+//        boolean isSorted = false;
+//        while (!isSorted) {
+//            isSorted = true;
+//            for (int i = 1; i < list.size(); i++) {
+//                if (list.get(i) < list.get(i - 1)) {
+//                    int s = list.get(i);
+//                    list.set(list.get(i), list.get(i - 1));
+//                    list.set(list.get(i - 1), s);
+//                    isSorted = false;
+//                }
+//            }
+//        }
     }
 }
 
