@@ -1,14 +1,14 @@
 public class OwnList<T> implements OwnListMethods{
     private final int CAPACITY = 10;
-    private int count = 0;
+    private int countOfCapacity = 0;
     Object[] ownList = new Object[CAPACITY];
 
     @Override
     public void add(Object value) {
-        if (ownList.length == count) {
+        if (ownList.length == countOfCapacity) {
             overWriteUpCapacity();
         }
-        ownList[count++] = value;
+        ownList[countOfCapacity++] = value;
     }
 
     @Override
@@ -21,16 +21,22 @@ public class OwnList<T> implements OwnListMethods{
 
     @Override
     public Object get(int index) {
+        checkIndex(index);
         return ownList[index];
     }
 
-    //    public Object get(int index) {
-//        return (T) ownList[index];
-//    }
+    @Override
+    public void checkIndex(int index) {
+        if (index < 0 || index > ownList.length) {
+            System.out.println("Бро, you are talking nonsense");
+            throw new IllegalArgumentException();
+        }
+    }
 
-//    public int size() {
-//        return count;
-//    }
+    @Override
+    public int length() {
+        return countOfCapacity;
+    }
 
 //    public void delete(int index) {
 //        for (int i = index; i < count; i++) {
