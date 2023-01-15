@@ -1,5 +1,5 @@
-public class OwnList<T> implements OwnListMethods{
-    private final int CAPACITY = 10;
+public class OwnList<T> implements OwnListMethods {
+    private final int CAPACITY = 16;
     private int countOfCapacity = 0;
     Object[] ownList = new Object[CAPACITY];
 
@@ -13,7 +13,7 @@ public class OwnList<T> implements OwnListMethods{
 
     @Override
     public void overWriteUpCapacity() {
-        Object [] newList = new Object[ownList.length * 2];
+        Object[] newList = new Object[ownList.length * 2];
         System.arraycopy(ownList, 0, newList, 0, ownList.length);
         ownList = newList;
         System.out.println("Capacity было увеличенно в два раза");
@@ -38,16 +38,22 @@ public class OwnList<T> implements OwnListMethods{
         return countOfCapacity;
     }
 
-//    public void delete(int index) {
-//        for (int i = index; i < count; i++) {
-//            ownList[i] = ownList[i + 1];
-//        }
-//        count--;
-//    }
+    @Override
+    public void delete(int index) {
+        checkIndex(index);
+        for (int i = index; i < countOfCapacity; i++) {
+            ownList[i] = ownList[i + 1];
+        }
+        countOfCapacity--;
+    }
 
-//    public void set(int index, int value) {
-//        ownList[index] = value;
-//    }
+    @Override
+    public <T> void set(int index, T value) {
+        checkIndex(index);
+        ownList[index] = value;
+    }
+
+
 
 //    public void addAll(OwnList<T> list, OwnList<T> ownList2) {
 //        Object[] o = new Object[list.size() + ownList2.size()];

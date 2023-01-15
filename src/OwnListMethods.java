@@ -4,11 +4,10 @@ public interface OwnListMethods {
     public Object get(int index);
     public void checkIndex(int index);
     public int length();
+    public void delete(int index);
+    public <T> void set(int index, T value);    // !!!! ВНИМАНИЕ!!! Проверить на капасити при вставке!!!! Не забыть!!!
 
-
-//    public void addAll();
-//    public void delete();
-//    public void set();
 //    public void clearOfNull();
+//    public void addAll();
 //    public void bubbleSort();
 }
